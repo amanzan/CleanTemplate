@@ -27,7 +27,7 @@ class DatabaseModule {
             AppDatabase::class.java,
             "task.db"
             )
-            .fallbackToDestructiveMigration(false)
+            .fallbackToDestructiveMigration(true)
             .build()
     }
 }

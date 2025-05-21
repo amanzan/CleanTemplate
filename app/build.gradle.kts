@@ -114,11 +114,9 @@ dependencies {
     // Tooling
     debugImplementation(libs.androidx.compose.ui.tooling)
 
-    // Retrofit & Moshi
-    implementation(libs.moshi)
-    implementation(libs.moshi.kotlin)
+    // Retrofit
     implementation(libs.retrofit)
-    implementation(libs.retrofit.converter.moshi)
+    implementation(libs.retrofit.converter.gson)
     implementation(libs.okhttp.logging)
 
     // Instrumented tests
