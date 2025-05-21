@@ -24,7 +24,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import com.amanzan.cleantemplate.data.TaskRepository
+import com.amanzan.cleantemplate.domain.repository.TaskRepository
 
 /**
  * Example local unit test, which will execute on the development machine (host).

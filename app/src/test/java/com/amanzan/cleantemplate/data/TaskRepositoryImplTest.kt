@@ -25,16 +25,17 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 import com.amanzan.cleantemplate.data.local.database.Task
 import com.amanzan.cleantemplate.data.local.database.TaskDao
+import com.amanzan.cleantemplate.data.repository.TaskRepositoryImpl
 
 /**
- * Unit tests for [DefaultTaskRepository].
+ * Unit tests for [TaskRepositoryImpl].
  */
 @OptIn(ExperimentalCoroutinesApi::class) // TODO: Remove when stable
-class DefaultTaskRepositoryTest {
+class TaskRepositoryImplTest {
 
     @Test
     fun tasks_newItemSaved_itemIsReturned() = runTest {
-        val repository = DefaultTaskRepository(FakeTaskDao())
+        val repository = TaskRepositoryImpl(FakeTaskDao())
 
         repository.add("Repository")
 

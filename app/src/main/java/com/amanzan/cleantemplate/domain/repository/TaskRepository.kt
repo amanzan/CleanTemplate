@@ -14,28 +14,14 @@
  * limitations under the License.
  */
 
-package com.amanzan.cleantemplate.data.local.database
+package com.amanzan.cleantemplate.domain.repository
 
-import androidx.room.Dao
-import androidx.room.Entity
-import androidx.room.Insert
-import androidx.room.PrimaryKey
-import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
-@Entity
-data class Task(
-    val name: String
-) {
-    @PrimaryKey(autoGenerate = true)
-    var uid: Int = 0
+interface TaskRepository {
+    val tasks: Flow<List<String>>
+
+    suspend fun add(name: String)
 }
 
-@Dao
-interface TaskDao {
-    @Query("SELECT * FROM task ORDER BY uid DESC LIMIT 10")
-    fun getTasks(): Flow<List<Task>>
 
-    @Insert
-    suspend fun insertTask(item: Task)
-}

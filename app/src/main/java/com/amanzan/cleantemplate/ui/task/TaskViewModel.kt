@@ -18,6 +18,7 @@ package com.amanzan.cleantemplate.ui.task
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.amanzan.cleantemplate.domain.repository.TaskRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -25,7 +26,6 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import com.amanzan.cleantemplate.data.TaskRepository
 import com.amanzan.cleantemplate.ui.task.TaskUiState.Error
 import com.amanzan.cleantemplate.ui.task.TaskUiState.Loading
 import com.amanzan.cleantemplate.ui.task.TaskUiState.Success

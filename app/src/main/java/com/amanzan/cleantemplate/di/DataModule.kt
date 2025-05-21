@@ -14,28 +14,26 @@
  * limitations under the License.
  */
 
-package com.amanzan.cleantemplate.data
+package com.amanzan.cleantemplate.di
 
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
-import com.amanzan.cleantemplate.data.local.database.Task
-import com.amanzan.cleantemplate.data.local.database.TaskDao
+import kotlinx.coroutines.flow.flowOf
+import com.amanzan.cleantemplate.domain.repository.TaskRepository
+import com.amanzan.cleantemplate.data.repository.TaskRepositoryImpl
 import javax.inject.Inject
+import javax.inject.Singleton
 
-interface TaskRepository {
-    val tasks: Flow<List<String>>
+@Module
+@InstallIn(SingletonComponent::class)
+interface DataModule {
 
-    suspend fun add(name: String)
-}
-
-class DefaultTaskRepository @Inject constructor(
-    private val taskDao: TaskDao
-) : TaskRepository {
-
-    override val tasks: Flow<List<String>> =
-        taskDao.getTasks().map { items -> items.map { it.name } }
-
-    override suspend fun add(name: String) {
-        taskDao.insertTask(Task(name = name))
-    }
+    @Singleton
+    @Binds
+    fun bindsTaskRepository(
+        taskRepository: TaskRepositoryImpl
+    ): TaskRepository
 }
