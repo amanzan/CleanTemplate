@@ -1,0 +1,103 @@
+// Android Jetpack Compose .cursorrules
+// Version 1.0
+// Last Updated: 2025-05-31
+
+// Flexibility Notice
+const flexibilityNotice = [
+  "This is a recommended project structure, but be flexible and adapt to existing project structures.",
+  "Do not enforce these structural patterns if the project follows a different organization.",
+  "Focus on maintaining consistency with the existing project architecture while applying Jetpack Compose best practices."
+];
+
+// Project Architecture and Best Practices
+const androidJetpackComposeBestPractices = [
+  "Adapt to existing project architecture while maintaining clean code principles",
+  "Follow Material Design 3 guidelines and components",
+  "Implement clean architecture with domain, data, and presentation layers",
+  "Use Kotlin coroutines and Flow for asynchronous operations",
+  "Implement dependency injection using Hilt",
+  "Follow unidirectional data flow with ViewModel and UI State",
+  "Use Compose navigation for screen management",
+  "Implement proper state hoisting and composition"
+];
+
+// Folder Structure
+const projectStructure = [
+  "app/",
+  "  src/",
+  "    main/",
+  "      java/com/package/",
+  "        data/",
+  "          repository/",
+  "          datasource/",
+  "          models/",
+  "        domain/",
+  "          usecases/",
+  "          models/",
+  "          repository/",
+  "        presentation/",
+  "          screens/",
+  "          components/",
+  "          theme/",
+  "          viewmodels/",
+  "        di/",
+  "        utils/",
+  "      res/",
+  "        values/",
+  "        drawable/",
+  "        mipmap/",
+  "    test/",
+  "    androidTest/"
+];
+
+// Compose UI Guidelines
+const composeGuidelines = [
+  "Use remember and derivedStateOf appropriately",
+  "Implement proper recomposition optimization",
+  "Use proper Compose modifiers ordering",
+  "Follow composable function naming conventions",
+  "Implement proper preview annotations",
+  "Use proper state management with MutableState",
+  "Implement proper error handling and loading states",
+  "Use proper theming with MaterialTheme",
+  "Follow accessibility guidelines",
+  "Implement proper animation patterns"
+];
+
+// Testing Guidelines
+const testingGuidelines = [
+  "Write unit tests for ViewModels and UseCases",
+  "Implement UI tests using Compose testing framework",
+  "Use fake repositories for testing",
+  "Implement proper test coverage",
+  "Use proper testing coroutine dispatchers"
+];
+
+// Performance Guidelines
+const performanceGuidelines = [
+  "Minimize recomposition using proper keys",
+  "Use proper lazy loading with LazyColumn and LazyRow",
+  "Implement efficient image loading",
+  "Use proper state management to prevent unnecessary updates",
+  "Follow proper lifecycle awareness",
+  "Implement proper memory management",
+  "Use proper background processing"
+];
+
+// Dependency Injection Guidelines
+const dependencyInjectionGuidelines = [
+  "When handling dependency injection using Hilt:",
+  "- Use @Binds for binding interface implementations (e.g., repositories, services).",
+  "- Use @Provides when creating or configuring instances of third-party or complex classes.",
+  "- Prefer @Binds over @Provides for interfaces for better performance and clarity.",
+  "- Classes with constructor @Inject generally do not require explicit bindings.",
+  "- Always scope bindings appropriately (e.g., @Singleton).",
+  "- Avoid unnecessary bindings if classes are not used.",
+  "- For custom or conditional bindings, use @Provides.",
+  "",
+  "Common example modules in this project:",
+  "1. AppModule (object): Provides DataStore<Preferences> instance.",
+  "2. DatabaseModule (object): Provides Room AppDatabase and DAOs.",
+  "3. NetworkModule (object): Provides OkHttpClient, Retrofit, ApiService, AuthApi.",
+  "4. RepositoryModule (abstract): Uses @Binds to link interface repositories to their implementations (UserRepository, PartnerRepository)."
+];
